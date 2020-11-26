@@ -1,0 +1,7 @@
+{
+  "name": "angelLeague",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
