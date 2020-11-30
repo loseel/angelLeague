@@ -1,0 +1,49 @@
+{
+    "store" : [
+        {
+            "name" : "뱅크샐러드", 
+            "num" : 6,
+            "percent" : 50,
+            "people" : 13,
+            "discount":0,
+            "price": 330000,
+            "img" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/logo/banksalad_company_logo.png",
+            "bg_img" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/banksal/banksal_bg.jpg",
+            "state" : "progress"
+        },
+        {
+            "name" : "리디", 
+            "num" : 8,
+            "percent" : 38,
+            "people" : 9,
+            "discount":0,
+            "price": 85000,
+            "img" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/ridi_logo.png",
+            "bg_img" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/ridi_bg.png",
+            "state" : "progress"
+        },
+        {
+            "name" : "컬리", 
+            "num" : 14,
+            "percent" : 84,
+            "people" : 20,
+            "discount":1,
+            "befo_price": 28450,
+            "price":22000,
+            "img" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/logo/KURLY_company_logo.png",
+            "bg_img" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/kurly_bg.png",
+            "state" : "progress"
+        },
+        {
+            "name" : "컬리", 
+            "num" : 10,
+            "percent" : 23,
+            "people" : 6,
+            "discount":0,
+            "price": 10000,
+            "img" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/logo/KURLY_company_logo.png",
+            "bg_img" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/kurly_bg.png",
+            "state" : "progress"
+        }
+    ]
+}

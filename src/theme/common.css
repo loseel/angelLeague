@@ -1,0 +1,393 @@
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css");
+
+/* 0. common */
+*{
+    box-sizing: border-box;
+}
+
+div {
+    font-family: 'nanumsquare'; 
+    display: block;
+}
+
+body {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+}
+
+img {
+    max-height: 100%;
+    border: 0;
+}
+
+.row {
+    display: flex;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.content {
+    min-height: 250px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.img-circle {
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+}
+
+span.font-light {
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+span.discounted {
+    text-decoration: line-through;
+    margin-right: 2px;
+}
+
+span.regular {
+    font-weight: 400;
+}
+
+a, a:active, a:focus, a:hover {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/* 1. home_top */
+.home_main {
+    font-weight: 400;
+    background-color: white;
+    padding : 20px 20px 12px;
+    border-bottom: 8px solid #f6f8fb;
+}
+
+.home_main>.medium {
+    font-size: 18px;
+    margin-bottom: 1px;
+}
+
+.home_info {
+    display: flex;
+    flex-direction: row;
+}
+
+.home_info>.large {
+    font-size: 30px;
+}
+
+.home_info>.strong {
+    font-weight: 800;
+}
+
+/* 2. home_menu */
+.white-margin {
+    margin: 40px 20px;
+}
+
+.white-margin>.menu_row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.white-margin>.menu_row>.col-xs-3 {
+    padding: 0px;
+    position: relative;
+    float: left;
+}
+
+.white-margin>.menu_row>.col-xs-3>.t {
+    text-align: center;
+    position: absolute;
+    top: 80px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    width: 100%;
+}
+
+/* 3. home_clubdeal */
+.home_clubdeal {
+    padding: 40px 20px;
+    background-color: #f6f8fb;   
+}
+
+/* 3-1. home_clubdeal - home_top */
+.home_top {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.home_top>.medium {
+    font-size: 18px;
+}
+
+.home_top>.big {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.home_top>.small {
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.home_top>.small>a {
+    color:#666;
+}
+
+/* 3-2. home_clubdeal - small card */
+.home_clubdeal>.deal_row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.small_card {
+    width: 11.5rem;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #eef1f7;
+    box-shadow: 0px 0px 4px rgba(174, 182, 199, 0.2);
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+
+.small_card_bg {
+    width: 100%;
+    height: 80px;
+    border-radius: 10px 10px 0px 0px;
+    background-size: contain;
+}
+
+.small_card_bg>img {
+    width: 60px;
+    margin: 10px;
+}
+
+.small_card_info {
+    padding: 15px;
+}
+
+.small_card_info>.pn {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.small_card_info>.pr {
+    margin-bottom: 5px;
+}
+
+.small_card_info>.r {
+    font-family: NanumSquare;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+}
+
+/* 4. earlybird */
+.earlybird>.title {
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.earlybird>.title>p {
+    margin-top: 5px;
+    font-family: 'NanumBarunGothic' !important;
+    font-size: 16px;
+}
+
+.earlybird>.early_row {
+    flex-direction: row;
+}
+
+.early_row>.logoBox {
+    height: 40px;
+    margin-bottom: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: colu;
+}
+
+.earlybird_company>.c_logo {
+    margin-left: 5px;
+    position: relative;
+}
+
+.earlybird_company>.c_logo>.inset-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 0px 1px #0000000d;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+
+.vote_top_left>.c_logo, .earlybird_company>.c_logo {
+    width: 40px;
+    height: 40px;
+}
+
+.vote_row {
+    flex-direction: column;
+    box-sizing: content-box;
+}
+
+/* 5. vote company */
+.vote_company {
+    padding: 12px 0px;
+}
+
+.vote_company:nth-child(1) {
+    padding-top: 15px;
+}
+
+.vote_top {
+    padding-left: 3px;
+    padding-right: 3px;
+    width: calc(100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.vote_top_right {
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    font-size: 14px;
+    color: #666666;
+    margin-top: 10px;
+}
+
+.vote_top>.vote_top_right>.num {
+    font-family: NanumBarunGothic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: right;
+    color: #222;
+}
+
+.vote_top>.vote_top_right>.num.blue {
+    color: #4A90E2;
+}
+
+.vote_top>.d {
+    width: 150px;
+    padding-top: 8px;
+}
+
+.vote_top_left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.d>.title {
+    font-family: NanumBarunGothic;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #222222;
+    width: 98%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.home_button {
+    position: relative;
+    margin-top: 30px;
+}
+
+.home_button>.small {
+    font-family: NanumBarunGothic;
+    font-size: 14px;
+    color: #666666;
+    font-weight: 400;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.small>a {
+    color: #222;
+}
+
+/* 6. stockoption */
+.stockoption_tax {
+    padding: 60px 0px;
+    background-color: #004ec1;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.content_row>.desciption {    
+    font-size: 18px;
+    margin: 8px;
+}
+
+.content_row>p { 
+    font-family: NanumBarunGothic;
+    font-style: normal;       
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 12px;
+    opacity: 0.8;
+    line-height: 18px;
+    color: #8DB4FF;
+}
+
+.content>.content_row {
+    flex-direction: column;
+}
+
+.content_button {
+    background-color: transparent !important;
+    border: solid 1px #fff !important;
+    color: #fff;    max-width: 284px;
+    border-radius: 23px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 22px;
+    font-weight: 800;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    line-height: 1.3333333;
+    text-align: center;
+}

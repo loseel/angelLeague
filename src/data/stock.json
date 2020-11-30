@@ -1,0 +1,78 @@
+{
+    "stock" : [
+        {
+            "title" : "컬리",
+            "logo" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/logo/KURLY_company_logo.png",
+            "isClubDeal" : 1,
+            "cdNum" : 2,
+            "price": 21000
+        },
+        {
+            "title" : "리디",
+            "logo" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/ridi_logo.png",
+            "isClubDeal" : 1,
+            "cdNum" : 1,
+            "price": 333000
+        },
+        {
+            "title" : "레이니스트(뱅크샐러드)",
+            "logo" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/logo/banksalad_company_logo.png",
+            "isClubDeal" : 1,
+            "cdNum" : 1,
+            "price": 350000
+        },
+        {
+            "title" : "비바리퍼블리카(toss)",
+            "logo" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/toss.png",
+            "isClubDeal" : 1,
+            "cdNum" : 1,
+            "price": 53500
+        },
+        {
+            "title" : "중고나라",
+            "logo" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/joonggo_logo.png",
+            "isClubDeal" : 1,
+            "cdNum" : 1,
+            "price": 13000
+        },
+        {
+            "title" : "브랜디",
+            "logo" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/brandi.png",
+            "isClubDeal" : 0,
+            "price": 293488
+        },
+        {
+            "title" : "버즈빌",
+            "logo" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/logo/buzzvil_company_logo.png",
+            "isClubDeal" : 0,
+            "price": 80000
+        },
+        {
+            "title" : "한국카카오은행",
+            "logo" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/0091.png",
+            "isClubDeal" : 0,
+            "price": 85000
+        },
+        {
+            "title" : "뷰노",
+            "logo" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/0103.png",
+            "isClubDeal" : 0,
+            "price": 24000
+        },
+        {
+            "title" : "컬리",
+            "logo" : "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/socar/socar_logo.png",
+            "isClubDeal" : 0,
+            "price": 1500000
+        }
+    ],
+    "stockCount":280,
+    "cLogo":[
+        "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/logo/kakaomobility_company_logo.png",
+        "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/logo/musinsa_company_logo.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/0002.png",
+        "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/jandi.png",
+        "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/house.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/pub.angelleague.io/images/company_logos/smart.jpg"
+    ]
+}

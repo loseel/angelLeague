@@ -1,0 +1,19 @@
+{
+    "menu" : [
+        {
+            "src" : "//static.angelleague.io/images/deal_guy.png",
+            "srcset" : "//static.angelleague.io/images/deal_guy@2x.png 2x,//static.angelleague.io/images/deal_guy@3x.png 3x",
+            "title" : "주식구매"
+        },
+        {
+            "src" : "//static.angelleague.io/images/deal_boy.png",
+            "srcset" : "//static.angelleague.io/images/deal_boy@2x.png 2x,//static.angelleague.io/images/deal_boy@3x.png 3x",
+            "title" : "리드엔젤되기"
+        },
+        {
+            "src" : "//static.angelleague.io/images/deal_girl.png",
+            "srcset" : "//static.angelleague.io/images/deal_girl@2x.png 2x,//static.angelleague.io/images/deal_girl@3x.png 3x",
+            "title" : "주식구매"
+        }
+    ]
+}
