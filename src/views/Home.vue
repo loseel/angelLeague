@@ -38,29 +38,29 @@
             </div>
           </div>
           <div class="deal_row">
-            <div class="small_card cursor" v-for="store in stores" v-bind:key="store">
-              <div class="small_card_bg" v-bind:style='{backgroundImage : `url("${store.bg_img}")`}'>
-                <img v-bind:src="store.img">
+            <div class="small_card cursor" v-for="list in lists" v-bind:key="list">
+              <div class="small_card_bg" v-bind:style='{backgroundImage : `url("${list.card_bg}")`}'>
+                <img v-bind:src="list.company_logo">
               </div>
               <div class="small_card_info">
-                <div class="pn">{{store.name}}{{store.num}}호 클럽딜</div>
+                <div class="pn">{{list.clubdeal_name}}</div>
                 <div class="pr">
-                  <span v-if="store.discount === 1" class="font-light discounted">
-                    {{$filters.currency(store.befo_price)}}원/주
-                  </span>
+                  <!-- <span v-if="list.discount === 1" class="font-light discounted">
+                    {{$filters.currency(list.current_price)}}원/주
+                  </span> -->
                   <br>
                   <span class="bold" v-if="user.name = ''">
                     로그인 후 확인 가능
                   </span>
                   <span class="bold" v-else>
-                    {{$filters.currency(store.price)}}원/주
+                    {{$filters.currency(list.buy_price)}}원/주
                   </span>
                 </div>
-                <div class="r" v-if="store.state === 'progress'">
-                  <span :style="[store.percent >= 40 ? store.percent >= 70 ? {'color':'#ff0000'} : {'color':'#4a90e2'} : {'color':'#666'}]">
-                        {{store.percent}}%
+                <div class="r" v-if="list.deal_status === 'collected'">
+                  <span :style="[list.collected_rate >= 40 ? list.collected_rate >= 70 ? {'color':'#ff0000'} : {'color':'#4a90e2'} : {'color':'#666'}]">
+                        {{list.collected_rate}}%
                   </span>
-                  진행 / {{store.people}}명
+                  진행 / {{list.people}}명
                 </div>
                 <div class="r" v-else>
                   진행예정 / 0명
@@ -156,19 +156,35 @@ import userInfo from '../data/users.json';
 import storeInfo from '../data/store.json';
 import stockInfo from '../data/stock.json';
 import homeMain from '../data/homeMain.json';
+import axios from 'axios';
 
-export default  {
+export default {
   name: 'home',
   data() {
     return {
       user:userInfo,
-      stores:storeInfo.store,
+      // stores:storeInfo.store,
+      token: String,
+      lists: Array ,
+      tests : Array,
       stocks:stockInfo.stock,
       companyLogo:stockInfo.cLogo,
       homeMain:homeMain.menu,
       stockCount:stockInfo.stockCount,
     }
   },
-  components: { IonContent, IonPage }
+  // props: ['userToken'],
+  components: { IonContent, IonPage },
+  async created() {
+    let res = await axios.post('https://api.angelleague.io/v1/token', {
+      clientSecret:"76f76fe0-e8df-11ea-a271-31983e1afdd0"
+    })
+
+    this.token = res.data.token;
+    
+    res = await axios.get('https://api.angelleague.io/v1/clubdeals', { headers: { 'Authorization': this.token } });
+    const response = res.data;
+    this.lists = response.slice(response.length-5,response.length);
+  },
 }
 </script>
