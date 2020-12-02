@@ -156,9 +156,10 @@ import userInfo from '../data/users.json';
 import storeInfo from '../data/store.json';
 import stockInfo from '../data/stock.json';
 import homeMain from '../data/homeMain.json';
+import { defineComponent } from 'vue';
 import axios from 'axios';
 
-export default {
+export default defineComponent({
   name: 'home',
   data() {
     return {
@@ -186,5 +187,6 @@ export default {
     const response = res.data;
     this.lists = response.slice(response.length-5,response.length);
   },
-}
+});
+
 </script>
