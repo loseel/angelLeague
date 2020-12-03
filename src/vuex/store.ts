@@ -1,6 +1,6 @@
 import { provide, inject } from 'vue';
 import { createStore, Store } from 'vuex';
-import userInfo from './data/users.json'
+import userInfo from '../data/users.json';
 import axios from 'axios'
 
 interface RootState {
@@ -26,12 +26,8 @@ export const store = createStore({
     SET_TOKEN(state, token) {
       state.token = token;
     },
-    GET_CARDLIST(state) {
-      return axios.get('https://api.angelleague.io/v1/clubdeals', { headers: { 'Authorization': state.token } })
-      .then((response) => {
-          const res = response.data;
-          state.cardList = res.slice(res.length-5,res.length);
-      })
+    SET_CARDLIST(state, cardList) {
+      state.cardList = cardList;
     },
   },
   actions: { // => 비동기 과정!
@@ -41,8 +37,16 @@ export const store = createStore({
     DECREASE({ state, commit }) {
       commit('SET_MONEY', state.userMoney - 1);
     },
+    LOADLIST({ state, commit }) {
+      return axios.get('https://api.angelleague.io/v1/clubdeals', { headers: { 'Authorization': state.token } })
+      .then((response) => {
+          let res = response.data;
+          res = res.slice(res.length-5,res.length);
+          commit('SET_CARDLIST', res);
+      })
+    },
   },
-  getters: {
+  getters : {
     cardList(state) {
       return state.cardList;
     },

@@ -1,22 +1,37 @@
 <template>
   <ion-app>
-    <ion-router-outlet />
+    <menu-bar></menu-bar>
+    <div class="ion-page" id="main-content">
+      <main-header></main-header>
+      <ion-content>
+        <ion-router-outlet /> 
+      </ion-content>
+    </div>
   </ion-app>
 </template>
 
-<script lang="ts">
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
+<script>
+import { IonApp, IonRouterOutlet, IonContent } from '@ionic/vue';
 import { defineComponent } from 'vue';
-import { provideStore } from '@/store';
+import { provideStore } from './vuex/store'
+import MainHeader from './components/MainHeader'
+import MenuBar from './components/MenuBar';
 
 export default defineComponent({
   name: 'App',
   components: {
     IonApp,
-    IonRouterOutlet,
+    IonRouterOutlet, // 여기에 바인딩됨!
+    IonContent,
+    MainHeader,
+    MenuBar,
   },
   setup() {
     provideStore();
+    // 저장소 제공 헬퍼 함수!
   },
 });
 </script>
+
+<style>
+</style>

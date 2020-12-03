@@ -76,7 +76,7 @@ a, a:active, a:focus, a:hover {
 .home_main {
     font-weight: 400;
     background-color: white;
-    padding : 20px 20px 12px;
+    padding : 10px 25px 12px;
     border-bottom: 8px solid #f6f8fb;
 }
 
@@ -162,17 +162,27 @@ a, a:active, a:focus, a:hover {
 .home_clubdeal>.deal_row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
 }
 
 .small_card {
-    width: 11.5rem;
-    margin: 10px;
+    width: 12em;
     background-color: #fff;
     border: 1px solid #eef1f7;
     box-shadow: 0px 0px 4px rgba(174, 182, 199, 0.2);
     border-radius: 10px;
-    margin-bottom: 6px;
+    margin : 6px;
+}
+
+@media(max-width: 380px) {
+    .small_card {
+        width: 11em;
+        margin : 3px;
+    }
+
+    .d>.title {
+        font-size: 14px !important;
+    }
 }
 
 .small_card_bg {

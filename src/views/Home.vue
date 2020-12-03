@@ -2,21 +2,27 @@
   <ion-page ref="mainElement">
     <ion-content :fullscreen="true">
       <div id="container">
-        <div class="home_main">
+        <div v-if="userName !== ''" class="home_main">
           <div class="medium">
             {{userName}}님의 <br> 투자현황입니다
           </div>
           <div class="home_info">
             <div class="large strong">
               {{$filters.currency(userMoney)}}
-            <div>
-              <button @click="increase">입금</button>
-              <button @click="decrease">출금</button>
-            </div>
             </div>
             <div class="large">
               원
             </div>
+          </div>
+        </div>
+        <div v-else class="home_main">
+          <div class="home_info">
+            <div class="large strong">
+              환영합니다.
+            </div>
+          </div>
+          <div class="medium">
+            로그인을 해주세요.
           </div>
         </div>
         <div class="white-margin">
@@ -53,7 +59,7 @@
                     {{$filters.currency(list.current_price)}}원/주
                   </span>
                   <br>
-                  <span class="bold" v-if="user.name = ''">
+                  <span class="bold" v-if="userName === ''">
                     로그인 후 확인 가능
                   </span>
                   <span class="bold" v-else>
@@ -159,7 +165,7 @@ import { IonPage, IonContent } from '@ionic/vue';
 import stockInfo from '../data/stock.json';
 import homeMain from '../data/homeMain.json';
 import { computed, defineComponent } from 'vue';
-import { useStore } from '@/store';
+import { useStore } from '../vuex/store';
 import axios from 'axios';
 
 export default defineComponent({
@@ -175,20 +181,21 @@ export default defineComponent({
   setup() {
     // const { dispatch, state } = useStore(); // 저장소 객체 주입받아 사용하기
     const { state, dispatch, commit, getters } = useStore();
-    const userName = computed(() => state.userName);
+    const userName = computed(() => state.userName); // computed : 저장소의 count 상태를 반응형으로 렌더링 하기 위해 사용!
     const userMoney = computed(() => state.userMoney);
     const increase = () => dispatch('INCREASE'); // INCREASE 액션 호출
     const decrease = () => dispatch('DECREASE'); // DECREASE 액션 호출 ;
+    const getList = () => dispatch('LOADLIST');
 
     axios.post('https://api.angelleague.io/v1/token', {
       clientSecret:"76f76fe0-e8df-11ea-a271-31983e1afdd0"
     })
     .then((res) => {
       commit('SET_TOKEN',res.data.token);
-      commit('GET_CARDLIST',getters.token);
+      getList();
     })
-    
-    const cardList = getters.cardList;
+
+    const cardList = computed(() => getters.cardList);
 
     return {userName, userMoney, increase, decrease, cardList};
   },
