@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "AngelLeague",
+  "appName": "angelLeague",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "dist",

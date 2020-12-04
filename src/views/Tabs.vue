@@ -7,7 +7,7 @@
           <ion-label>홈</ion-label>
         </ion-tab-button>
           
-        <ion-tab-button tab="search" href="/tabs/home">
+        <ion-tab-button tab="search" href="/tabs/search">
           <ion-icon :icon="searchOutline" />
           <ion-label>검색</ion-label>
         </ion-tab-button>
