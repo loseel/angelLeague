@@ -2,7 +2,7 @@
   <ion-page ref="mainElement">
     <ion-content :fullscreen="true">
       <div id="container">
-        <div v-if="userName !== ''" class="home_main">
+        <div v-if="userToken !== ''" class="home_main">
           <div class="medium">
             {{userName}}님의 <br> 투자현황입니다
           </div>
@@ -59,7 +59,7 @@
                     {{$filters.currency(list.current_price)}}원/주
                   </span>
                   <br>
-                  <span class="bold" v-if="userName === ''">
+                  <span class="bold" v-if="userToken === ''">
                     로그인 후 확인 가능
                   </span>
                   <span class="bold" v-else>
@@ -186,18 +186,16 @@ export default defineComponent({
     const increase = () => dispatch('INCREASE'); // INCREASE 액션 호출
     const decrease = () => dispatch('DECREASE'); // DECREASE 액션 호출 ;
     const getList = () => dispatch('LOADLIST');
+    const userToken = computed(() => state.token);
 
-    axios.post('https://api.angelleague.io/v1/token', {
-      clientSecret:"76f76fe0-e8df-11ea-a271-31983e1afdd0"
-    })
-    .then((res) => {
-      commit('SET_TOKEN',res.data.token);
+    if(getters.token !== '') {
+      commit('SET_TOKEN',getters.token);
       getList();
-    })
+    }
 
     const cardList = computed(() => getters.cardList);
 
-    return {userName, userMoney, increase, decrease, cardList};
+    return {userName, userMoney, increase, decrease, cardList, userToken};
   },
   components: { IonContent, IonPage },
 });

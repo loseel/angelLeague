@@ -4,14 +4,14 @@ import userInfo from '../data/users.json';
 import axios from 'axios'
 
 interface RootState {
-  token: any;
+  token: string;
   cardList: any;
   userName: string;
   userMoney: number;
 }
 
 const initalState: RootState = {
-  token: null,
+  token: '',
   cardList: null,
   userName: userInfo.user_name,
   userMoney: userInfo.money

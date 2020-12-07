@@ -1,63 +1,70 @@
 <template>
-  <div class="container">
-    <div class="login-box">
-      <div class="login-logo">로그인</div>
-      <div class="login-box-body">
-        <form id="loginForm" v-on:submit.prevent="sendPost">
-          <div class="form-group has-feedback">
-            <input
-              type="text"
-              v-model="userID"
-              name="userID"
-              class="form-control input-lg"
-              placeholder="Email"
-            />
+  <ion-page>
+    <ion-content fullscreen>
+      <div class="container">
+        <div class="login-box">
+          <div class="login-logo">로그인</div>
+          <div class="login-box-body">
+            <form id="loginForm" v-on:submit.prevent="sendPost">
+              <div class="form-group has-feedback">
+                <input
+                  type="text"
+                  v-model="reValue.userID"
+                  name="userID"
+                  class="form-control input-lg"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="form-group has-feedback last">
+                <input
+                  type="password"
+                  v-model="reValue.userPW"
+                  name="userPW"
+                  class="form-control input-lg"
+                  placeholder="Password"
+                />
+              </div>
+              <button type="Submit" class="loginBtn">로그인</button>
+            </form>
           </div>
-          <div class="form-group has-feedback last">
-            <input
-              type="password"
-              v-model="userPW"
-              name="userPW"
-              class="form-control input-lg"
-              placeholder="Password"
-            />
-          </div>
-          <button type="Submit" class="loginBtn">로그인</button>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
+    </ion-content>
+  </ion-page>
 </template>
 
 <script>
+import { IonPage, IonContent } from '@ionic/vue';
 import axios from "axios";
 import { useStore } from "../vuex/store";
-import { defineComponent } from "vue";
+import { defineComponent, reactive } from "vue";
 import router from "../router";
 
 export default defineComponent({
   name: "Login",
+  components: { IonPage, IonContent },
   setup() {
     const { commit, getters } = useStore();
-    const userID = "";
-    const userPW = "76f76fe0-e8df-11ea-a271-31983e1afdd0";
+    const reValue = reactive({userID : "", userPW : ""});
 
     const sendPost = async () => {
-      console.log(userPW);
       axios
         .post("https://api.angelleague.io/v1/token", {
-          clientSecret: userPW,
+          clientSecret: reValue.userPW,
         })
         .then((res) => {
           commit("SET_TOKEN", res.data.token);
+          if (getters.token !== null) {
+            console.log(getters.token);
+            router.push("/tabs/home");
+          }
         })
         .catch((err) => {
           console.log(err);
         });
-      if (getters.token !== null) router.push("/tabs/home");
     };
 
-    return { sendPost, userID, userPW };
+    return { sendPost, reValue };
     // => data return
   },
 });
